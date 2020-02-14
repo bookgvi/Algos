@@ -7,11 +7,6 @@ public class QuickSort {
     private ArrayConcat concat;
     private ArrayCopy copy;
 
-    public QuickSort() {
-        this.concat = new ArrayConcat();
-        this.copy = new ArrayCopy();
-    }
-
     public int[] makeSort(int[] arr) {
         if (arr.length < 2) {
             return arr;
@@ -31,9 +26,9 @@ public class QuickSort {
             }
         }
         int[] pivotArr = new int[]{pivotValue};
-        int[] temp = this.copy.doit(leftArr, j);
-        int[] leftArrTmp = this.concat.concatTwoArrays(temp, pivotArr);
-        int[] rightArrTmp = this.copy.doit(rightArr, k);
-        return this.concat.concatTwoArrays(makeSort(leftArrTmp), makeSort(rightArrTmp));
+        int[] temp = ArrayCopy.doit(leftArr, j);
+        int[] leftArrTmp = ArrayConcat.concatTwoArrays(temp, pivotArr);
+        int[] rightArrTmp = ArrayCopy.doit(rightArr, k);
+        return ArrayConcat.concatTwoArrays(makeSort(leftArrTmp), makeSort(rightArrTmp));
     }
 }

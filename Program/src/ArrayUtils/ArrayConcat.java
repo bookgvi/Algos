@@ -1,7 +1,7 @@
 package ArrayUtils;
 
 public class ArrayConcat {
-    public int[] concatTwoArrays(int[] A, int[] B) {
+    public static int[] concatTwoArrays(int[] A, int[] B) {
         int aLen = A.length;
         int bLen = B.length;
         int[] C = new int[aLen + bLen];
