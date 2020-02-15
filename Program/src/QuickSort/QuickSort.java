@@ -26,9 +26,9 @@ public class QuickSort {
             }
         }
         int[] pivotArr = new int[]{pivotValue};
-        int[] temp = ArrayCopy.doit(leftArr, j);
+        int[] temp = ArrayCopy.reduceArray(leftArr, j);
         int[] leftArrTmp = ArrayConcat.concatTwoArrays(temp, pivotArr);
-        int[] rightArrTmp = ArrayCopy.doit(rightArr, k);
+        int[] rightArrTmp = ArrayCopy.reduceArray(rightArr, k);
         return ArrayConcat.concatTwoArrays(makeSort(leftArrTmp), makeSort(rightArrTmp));
     }
 }
