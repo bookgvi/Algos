@@ -1,14 +1,11 @@
-package QuickSort;
+package Sort;
 
 import ArrayUtils.ArrayConcat;
 import ArrayUtils.ArrayCopy;
 import ArrayUtils.ArrayElements;
 
 public class QuickSort {
-    private ArrayConcat concat;
-    private ArrayCopy copy;
-
-    public int[] makeSort(int[] arr) {
+    public static int[] makeSort(int[] arr) {
         if (arr.length < 2 || ArrayElements.isEqual(arr)) {
             return arr;
         }
