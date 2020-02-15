@@ -2,33 +2,38 @@ package QuickSort;
 
 import ArrayUtils.ArrayConcat;
 import ArrayUtils.ArrayCopy;
+import ArrayUtils.ArrayElements;
 
 public class QuickSort {
     private ArrayConcat concat;
     private ArrayCopy copy;
 
     public int[] makeSort(int[] arr) {
-        if (arr.length < 2) {
+        if (arr.length < 2 || ArrayElements.isEqual(arr)) {
             return arr;
         }
         int pivot = (int) (Math.random() * (arr.length - 1));
         int pivotValue = arr[pivot];
         int[] leftArr = new int[arr.length];
         int[] rightArr = new int[arr.length];
-        int j = 0, k = 0;
+        int[] pivotArr = new int[arr.length];
+        int i = 0, j = 0, k = 0;
         for (int value : arr) {
             if (value < pivotValue) {
-                leftArr[j] = value;
-                j++;
+                leftArr[i] = value;
+                i++;
             } else if (value > pivotValue) {
-                rightArr[k] = value;
+                rightArr[j] = value;
+                j++;
+            } else {
+                pivotArr[k] = value;
                 k++;
             }
         }
-        int[] pivotArr = new int[]{pivotValue};
-        int[] temp = ArrayCopy.reduceArray(leftArr, j);
-        int[] leftArrTmp = ArrayConcat.concatTwoArrays(temp, pivotArr);
-        int[] rightArrTmp = ArrayCopy.reduceArray(rightArr, k);
-        return ArrayConcat.concatTwoArrays(makeSort(leftArrTmp), makeSort(rightArrTmp));
+        int[] leftArrTmp = ArrayCopy.reduceArray(leftArr, i);
+        int[] rightArrTmp = ArrayCopy.reduceArray(rightArr, j);
+        int[] pivotArrTmp = ArrayCopy.reduceArray(pivotArr, k);
+        int[] leftArrAndPivotTmp = ArrayConcat.concatTwoArrays(leftArrTmp, pivotArrTmp);
+        return ArrayConcat.concatTwoArrays(makeSort(leftArrAndPivotTmp), makeSort(rightArrTmp));
     }
 }

@@ -4,7 +4,7 @@ import QuickSort.QuickSort;
 
 public class Program {
     public static void main(String[] args) {
-        ArrayPrepare prepArr = new ArrayPrepare(3000);
+        ArrayPrepare prepArr = new ArrayPrepare(50, 13);
         int[] arr = prepArr.getArray();
         int arrLength = arr.length;
 
@@ -13,7 +13,7 @@ public class Program {
         ArrayShow.printArray(arr);
         QuickSort quickSort = new QuickSort();
         int[] sortedArray = quickSort.makeSort(arr);
-        System.out.printf("\n\nSorted array (%d):", sortedArray.length);
+        System.out.printf("\n\nSorted array (%d):\n", sortedArray.length);
         ArrayShow.printArray(sortedArray);
     }
 }
