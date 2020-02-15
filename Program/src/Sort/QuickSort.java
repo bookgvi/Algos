@@ -1,7 +1,7 @@
 package Sort;
 
 import ArrayUtils.ArrayCopy;
-import ArrayUtils.ArrayElements;
+import ArrayUtils.ArrayCompareElements;
 
 public class QuickSort implements Execute {
     private int[] arr;
@@ -11,7 +11,7 @@ public class QuickSort implements Execute {
     }
 
     private int[] makeSort(int[] arr) {
-        if (arr.length < 2 || ArrayElements.isEqual(arr)) {
+        if (arr.length < 2 || ArrayCompareElements.isEqual(arr)) {
             return arr;
         }
         int pivot = (int) (Math.random() * (arr.length - 1));

@@ -1,6 +1,6 @@
 package ArrayUtils;
 
-public class ArrayElements {
+public class ArrayCompareElements {
     /**
      * Проверка - все ли элементы массива одинаковы
      *
