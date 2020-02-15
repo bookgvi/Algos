@@ -32,9 +32,9 @@ public class QuickSort implements Execute {
                 k++;
             }
         }
-        int[] leftArrTmp = ArrayCopy.reduceArray(leftArr, i);
-        int[] rightArrTmp = ArrayCopy.reduceArray(rightArr, j);
-        int[] pivotArrTmp = ArrayCopy.reduceArray(pivotArr, k);
+        int[] leftArrTmp = ArrayCopy.reduceArrayRight(leftArr, i);
+        int[] rightArrTmp = ArrayCopy.reduceArrayRight(rightArr, j);
+        int[] pivotArrTmp = ArrayCopy.reduceArrayRight(pivotArr, k);
         int[] leftArrAndPivotTmp = ArrayCopy.concatTwoArrays(leftArrTmp, pivotArrTmp);
         return ArrayCopy.concatTwoArrays(makeSort(leftArrAndPivotTmp), makeSort(rightArrTmp));
     }

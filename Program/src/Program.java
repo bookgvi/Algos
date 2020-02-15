@@ -1,3 +1,4 @@
+import ArrayUtils.ArrayFindElement;
 import ArrayUtils.ArrayInsert;
 import ArrayUtils.ArrayPrepare;
 import ArrayUtils.ArrayShow;
@@ -26,5 +27,22 @@ public class Program {
         System.out.println();
         int[] newArr = ArrayInsert.setElement(arr1, 666, 4);
         ArrayShow.printArray(newArr);
+        System.out.println();
+
+        /*
+         * Блок бинарного поиска
+         */
+        ArrayPrepare prepArr2 = new ArrayPrepare(15, 15);
+        int[] arr2 = prepArr2.getArray();
+        int findValue = 5;
+        ArrayFindElement findElement = new ArrayFindElement(arr2, findValue);
+        System.out.printf("\nБинарный поиск - ищем %d в массиве ", findValue);
+        ArrayShow.printArray(arr2);
+        boolean result = findElement.exec();
+        if (result) {
+            System.out.printf("\n ++++++++ Найдено ++++++++\n");
+        } else {
+            System.out.printf("\n========= Не найдено =========\n");
+        }
     }
 }
