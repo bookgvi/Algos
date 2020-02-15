@@ -1,6 +1,5 @@
 package Sort;
 
-import ArrayUtils.ArrayConcat;
 import ArrayUtils.ArrayCopy;
 import ArrayUtils.ArrayElements;
 
@@ -30,7 +29,7 @@ public class QuickSort {
         int[] leftArrTmp = ArrayCopy.reduceArray(leftArr, i);
         int[] rightArrTmp = ArrayCopy.reduceArray(rightArr, j);
         int[] pivotArrTmp = ArrayCopy.reduceArray(pivotArr, k);
-        int[] leftArrAndPivotTmp = ArrayConcat.concatTwoArrays(leftArrTmp, pivotArrTmp);
-        return ArrayConcat.concatTwoArrays(makeSort(leftArrAndPivotTmp), makeSort(rightArrTmp));
+        int[] leftArrAndPivotTmp = ArrayCopy.concatTwoArrays(leftArrTmp, pivotArrTmp);
+        return ArrayCopy.concatTwoArrays(makeSort(leftArrAndPivotTmp), makeSort(rightArrTmp));
     }
 }

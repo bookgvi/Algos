@@ -1,6 +1,7 @@
 package ArrayUtils;
 
-public class ArrayCopy {
+public class ArrayCopy extends ArrayConcat {
+
     /**
      * Уменьшение длинны массива
      *

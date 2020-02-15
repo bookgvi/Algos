@@ -4,11 +4,11 @@ import Sort.QuickSort;
 
 public class Program {
     public static void main(String[] args) {
-        ArrayPrepare prepArr = new ArrayPrepare(50, 13);
+        ArrayPrepare prepArr = new ArrayPrepare(50, 300);
+
         int[] arr = prepArr.getArray();
 
-        System.out.printf("Array size is %d \n", arr.length);
-        System.out.println("\nUnsorted array:");
+        System.out.printf("\nUnsorted array (%d):\n", arr.length);
         ArrayShow.printArray(arr);
 
         int[] sortedArray = QuickSort.makeSort(arr);
