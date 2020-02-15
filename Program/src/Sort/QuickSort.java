@@ -3,8 +3,14 @@ package Sort;
 import ArrayUtils.ArrayCopy;
 import ArrayUtils.ArrayElements;
 
-public class QuickSort {
-    public static int[] makeSort(int[] arr) {
+public class QuickSort implements Execute {
+    private int[] arr;
+
+    public QuickSort(int[] arr) {
+        this.arr = arr;
+    }
+
+    private int[] makeSort(int[] arr) {
         if (arr.length < 2 || ArrayElements.isEqual(arr)) {
             return arr;
         }
@@ -31,5 +37,10 @@ public class QuickSort {
         int[] pivotArrTmp = ArrayCopy.reduceArray(pivotArr, k);
         int[] leftArrAndPivotTmp = ArrayCopy.concatTwoArrays(leftArrTmp, pivotArrTmp);
         return ArrayCopy.concatTwoArrays(makeSort(leftArrAndPivotTmp), makeSort(rightArrTmp));
+    }
+
+    @Override
+    public int[] exec() {
+        return this.makeSort(this.arr);
     }
 }

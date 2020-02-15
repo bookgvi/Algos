@@ -1,19 +1,21 @@
 import ArrayUtils.ArrayPrepare;
-import ArrayUtils.ArrayShow;
+//import ArrayUtils.ArrayShow;
 import Sort.QuickSort;
+import Utils.FunctionSpeed;
 
 public class Program {
     public static void main(String[] args) {
-        ArrayPrepare prepArr = new ArrayPrepare(50, 300);
+        final int EXECUTION_COUNT = 1000;
+        ArrayPrepare prepArr = new ArrayPrepare(500000, 300);
 
         int[] arr = prepArr.getArray();
+        FunctionSpeed functionSpeed = new FunctionSpeed(new QuickSort(arr));
 
-        System.out.printf("\nUnsorted array (%d):\n", arr.length);
-        ArrayShow.printArray(arr);
+        System.out.printf("\nUnsorted array (Array size = %d):", arr.length);
 
-        int[] sortedArray = QuickSort.makeSort(arr);
+        int[] sortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
 
-        System.out.printf("\n\nSorted array (%d):\n", sortedArray.length);
-        ArrayShow.printArray(sortedArray);
+        System.out.printf("\nSorted array: Array size = %d, ETA = %dms", sortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
+//        ArrayShow.printArray(sortedArray);
     }
 }
