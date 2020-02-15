@@ -9,6 +9,14 @@ public class ArrayPrepare {
         this.maxNumber = maxNumber;
     }
 
+    /**
+     * Метод возвращает массив, заполненный случайными элементами, необходимые входные параметры
+     * size - размер массива
+     * maxNumber - макс число, которое может быть в качестве значения элемента массива
+     * инициализируются в конструкторе
+     *
+     * @return - массив
+     */
     public int[] getArray() {
         int[] arr = new int[this.size];
         for (int i = 0; i < this.size; i++) {
