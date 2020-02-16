@@ -23,16 +23,18 @@ public class Program {
 
 //        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", sortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
 //
-//        /*
-//         * Блок проверки ArrayInsert - вставки элемента в массив
-//         */
-//        ArrayPrepare prepArr1 = new ArrayPrepare(5, 300);
-//        int[] arr1 = prepArr1.getArray();
-//        ArrayShow.printArray(arr1);
-//        System.out.println();
-//        int[] newArr = ArrayInsert.setElement(arr1, 666, 4);
-//        ArrayShow.printArray(newArr);
-//        System.out.println();
+        /*
+         * Блок проверки ArrayInsert - вставки элемента в массив
+         */
+        ArrayPrepare prepArr1 = new ArrayPrepare(5, 300);
+        int[] arr1 = prepArr1.getArray();
+        final int POSITION = 4;
+        System.out.printf("\n\nВставка 666 в массив в позицию %d\n", POSITION);
+        ArrayShow.printArray(arr1);
+        System.out.println();
+        int[] newArr = ArrayInsert.setElement(arr1, 666, POSITION);
+        ArrayShow.printArray(newArr);
+        System.out.println();
 
 //        /*
 //         * Блок бинарного поиска
