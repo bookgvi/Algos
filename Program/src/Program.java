@@ -39,18 +39,19 @@ public class Program {
         /*
          * Блок бинарного поиска
          */
-        ArrayPrepare prepArr2 = new ArrayPrepare(20, 7);
+        final int ARRAY_SIZE = 25, MAX_VALUE = 15, FIND_VALUE = (int) (Math.random() * MAX_VALUE);
+        ArrayPrepare prepArr2 = new ArrayPrepare(ARRAY_SIZE, MAX_VALUE);
         int[] arr2 = prepArr2.getArray();
+//        int[] arr2 = {0, 2, 2, 4, 4};
         QuickSort quickSort2 = new QuickSort(arr2);
-        int findValue = 1;
-        ArrayFindElement findElement = new ArrayFindElement(arr2, findValue);
-        System.out.printf("\nБинарный поиск - ищем %d в массиве ", findValue);
+        ArrayFindElement findElement = new ArrayFindElement(arr2, FIND_VALUE);
+        System.out.printf("\nБинарный поиск - ищем %d в массиве ", FIND_VALUE);
         ArrayShow.printArray(quickSort2.exec());
         int result = findElement.exec();
         if (result != -1) {
-            System.out.printf("\n ++++++++ Найдено (%d) ++++++++\n", result);
+            System.out.printf("\n ++++++++ Найдено (index = %d) ++++++++\n", result);
         } else {
-            System.out.printf("\n========= Не найдено (%d) =========\n", result);
+            System.out.print("\n========= Не найдено =========\n");
         }
     }
 }

@@ -26,7 +26,7 @@ public class ArrayCopy extends ArrayConcat {
         int srcLength = source.length;
         int targetLength = srcLength - startElem;
         int[] target = new int[targetLength];
-        System.arraycopy(source, startElem - 1, target, 0, targetLength);
+        System.arraycopy(source, startElem, target, 0, targetLength);
         return target;
     }
 }
