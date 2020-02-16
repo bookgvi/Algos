@@ -69,11 +69,8 @@ public class Program {
         System.out.printf("Stack size = %d\n", stackX.size());
         System.out.printf("Stack peek(): value = %d\n", stackX.peek());
 
-        // Стэк строк
+        // Стэк строк (пустой)
         Stack<String> stackS = new Stack<String>();
-        stackS.push("QQQ");
-        stackS.push("QQQ1");
-        stackS.push("QQQ2");
         System.out.printf("\nStack size = %d\n", stackS.size());
         System.out.printf("Stack pop(): value = %S\n", stackS.pop());
         System.out.printf("Stack peek(): value = %S\n", stackS.peek());

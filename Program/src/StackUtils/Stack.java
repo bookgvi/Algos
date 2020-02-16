@@ -20,6 +20,9 @@ public class Stack<T> implements Size, Push<T>, Pop<T>, Peek<T> {
     }
 
     public T pop() {
+        if (array.length < 1) {
+            return null;
+        }
         T res = array[array.length - 1];
         T[] arrayTmp = (T[]) new Object[array.length - 1];
         System.arraycopy(array,0, arrayTmp, 0, array.length - 1);
@@ -28,6 +31,9 @@ public class Stack<T> implements Size, Push<T>, Pop<T>, Peek<T> {
     }
 
     public T peek() {
+        if (array.length < 1) {
+            return null;
+        }
         return array[array.length - 1];
     }
 }
