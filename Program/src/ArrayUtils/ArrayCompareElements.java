@@ -8,9 +8,9 @@ public class ArrayCompareElements {
      * @return -  результат true/false (true - элементы массива одинаковые, иначе false)
      */
     public static boolean isEqual(int[] arr) {
-        boolean isEqual = false;
+        boolean isEqual = true;
         for (int value : arr) {
-            isEqual = arr[0] == value;
+            isEqual &= arr[0] == value;
         }
         return isEqual;
     }
