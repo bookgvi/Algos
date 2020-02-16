@@ -13,13 +13,17 @@ public class Stack<T> implements Size, Push<T>, Pop<T>, Peek<T> {
     }
 
     public void push(Object val) {
-        array = (T[]) new Object[array.length + 1];
-        array[array.length - 1] = (T) val;
+        T[] arrayTmp = (T[]) new Object[array.length + 1];
+        System.arraycopy(array, 0, arrayTmp, 0, array.length);
+        arrayTmp[array.length] = (T) val;
+        array = arrayTmp;
     }
 
     public T pop() {
         T res = array[array.length - 1];
-        array = (T[]) new Object[array.length - 1];
+        T[] arrayTmp = (T[]) new Object[array.length - 1];
+        System.arraycopy(array,0, arrayTmp, 0, array.length - 1);
+        array = arrayTmp;
         return res;
     }
 
