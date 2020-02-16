@@ -54,7 +54,7 @@ public class Program {
          * Блок для операций со стэком
          *
          */
-
+        // Стэк чисел
         Stack<Integer> stackX = new Stack<Integer>();
         System.out.printf("Creating... Stack size = %d\n", stackX.size());
         System.out.print("Stack push(1)\n");
@@ -68,5 +68,14 @@ public class Program {
         System.out.printf("Stack pop(): value = %d\n", stackX.pop());
         System.out.printf("Stack size = %d\n", stackX.size());
         System.out.printf("Stack peek(): value = %d\n", stackX.peek());
+
+        // Стэк строк
+        Stack<String> stackS = new Stack<String>();
+        stackS.push("QQQ");
+        stackS.push("QQQ1");
+        stackS.push("QQQ2");
+        System.out.printf("\nStack size = %d\n", stackS.size());
+        System.out.printf("Stack pop(): value = %S\n", stackS.pop());
+        System.out.printf("Stack peek(): value = %S\n", stackS.peek());
     }
 }
