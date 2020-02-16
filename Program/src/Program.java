@@ -36,21 +36,21 @@ public class Program {
         ArrayShow.printArray(newArr);
         System.out.println();
 
-//        /*
-//         * Блок бинарного поиска
-//         */
-//        ArrayPrepare prepArr2 = new ArrayPrepare(20, 7);
-//        int[] arr2 = prepArr2.getArray();
-//        QuickSort quickSort = new QuickSort(arr2);
-//        int findValue = 1;
-//        ArrayFindElement findElement = new ArrayFindElement(arr2, findValue);
-//        System.out.printf("\nБинарный поиск - ищем %d в массиве ", findValue);
-//        ArrayShow.printArray(quickSort.exec());
-//        int result = findElement.exec();
-//        if (result != -1) {
-//            System.out.printf("\n ++++++++ Найдено (%d) ++++++++\n", result);
-//        } else {
-//            System.out.printf("\n========= Не найдено (%d) =========\n", result);
-//        }
+        /*
+         * Блок бинарного поиска
+         */
+        ArrayPrepare prepArr2 = new ArrayPrepare(20, 7);
+        int[] arr2 = prepArr2.getArray();
+        QuickSort quickSort2 = new QuickSort(arr2);
+        int findValue = 1;
+        ArrayFindElement findElement = new ArrayFindElement(arr2, findValue);
+        System.out.printf("\nБинарный поиск - ищем %d в массиве ", findValue);
+        ArrayShow.printArray(quickSort2.exec());
+        int result = findElement.exec();
+        if (result != -1) {
+            System.out.printf("\n ++++++++ Найдено (%d) ++++++++\n", result);
+        } else {
+            System.out.printf("\n========= Не найдено (%d) =========\n", result);
+        }
     }
 }
