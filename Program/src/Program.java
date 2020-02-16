@@ -2,6 +2,7 @@ import ArrayUtils.ArrayFindElement;
 import ArrayUtils.ArrayInsert;
 import ArrayUtils.ArrayPrepare;
 import ArrayUtils.ArrayShow;
+import QueueUtils.Queue;
 import Sort.QuickSort;
 import StackUtils.Stack;
 import Utils.FunctionSpeed;
@@ -80,5 +81,19 @@ public class Program {
         System.out.printf("\nStack size = %d\n", stackS.size());
         System.out.printf("Stack pop(): value = %S\n", stackS.pop());
         System.out.printf("Stack peek(): value = %S\n", stackS.peek());
+
+        /*
+         * Блок для операций с очередью
+         */
+        Queue<Integer> queueX = new Queue<>();
+        final int FIRST = 11, SECOND = 12, THIRD = 13;
+        System.out.printf("\nCreating queue... Is it empty - %b\n", queueX.isEmpty());
+        System.out.printf("Попытка удалить элемент из пустой очереди: %d\n", queueX.dequeue());
+        System.out.printf("Добавим несколько элементов в очередь... %d, %d, %d\n", FIRST, SECOND, THIRD);
+        queueX.enqueue(FIRST);
+        queueX.enqueue(SECOND);
+        queueX.enqueue(THIRD);
+        System.out.printf("Удаляю элемент из начала очереди... (%d)\n", queueX.dequeue());
+        System.out.printf("Первый элемент в очереди: %d\n", queueX.top());
     }
 }
