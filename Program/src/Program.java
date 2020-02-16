@@ -3,6 +3,7 @@ import ArrayUtils.ArrayInsert;
 import ArrayUtils.ArrayPrepare;
 import ArrayUtils.ArrayShow;
 import QueueUtils.Queue;
+import QueueUtils.QueueCyclic;
 import Sort.QuickSort;
 import StackUtils.Stack;
 import Utils.FunctionSpeed;
@@ -86,7 +87,7 @@ public class Program {
          * Блок для операций с очередью
          */
         Queue<Integer> queueX = new Queue<>();
-        final int FIRST = 11, SECOND = 12, THIRD = 13;
+        final int FIRST = 11, SECOND = 12, THIRD = 13, FOURTH = 666;
         System.out.printf("\nCreating queue... Is it empty - %b\n", queueX.isEmpty());
         System.out.printf("Попытка удалить элемент из пустой очереди: %d\n", queueX.dequeue());
         System.out.printf("Добавим несколько элементов в очередь... %d, %d, %d\n", FIRST, SECOND, THIRD);
@@ -95,5 +96,17 @@ public class Program {
         queueX.enqueue(THIRD);
         System.out.printf("Удаляю элемент из начала очереди... (%d)\n", queueX.dequeue());
         System.out.printf("Первый элемент в очереди: %d\n", queueX.top());
+
+        // Cyclic queue (Смотреть в дебаггере)
+        QueueCyclic<Integer> queueCyclic = new QueueCyclic<>(3);
+        queueCyclic.enqueueCyclic(FIRST);
+        queueCyclic.enqueueCyclic(SECOND);
+        queueCyclic.enqueueCyclic(THIRD);
+        queueCyclic.enqueueCyclic(FOURTH);
+        queueCyclic.dequeueCyclic();
+        queueCyclic.dequeueCyclic();
+        queueCyclic.dequeueCyclic();
+        queueCyclic.enqueueCyclic(FOURTH);
+        queueCyclic.dequeueCyclic();
     }
 }
