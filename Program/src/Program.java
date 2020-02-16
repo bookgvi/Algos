@@ -28,7 +28,7 @@ public class Program {
          */
         ArrayPrepare prepArr1 = new ArrayPrepare(5, 300);
         int[] arr1 = prepArr1.getArray();
-        final int POSITION = 4;
+        final int POSITION = (int) (Math.random() * arr1.length);
         System.out.printf("\n\nВставка 666 в массив в позицию %d\n", POSITION);
         ArrayShow.printArray(arr1);
         System.out.println();
