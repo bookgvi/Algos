@@ -14,15 +14,15 @@ public class QueueCyclic<T> extends Queue<T> {
 
     @Override
     public T dequeue() {
-        if (isEmpty()) {
-            return null;
-        }
-        if (sizeArray <= front) {
+        /*
+         * Если массив пустой,
+         * голова очереди сдвинулась к концу массива или дальши
+         * или размер очереди 0 и начало очереди 0
+         */
+        if (isEmpty() || (sizeArray <= front) || (front == 0 && size == 0)) {
             front = 0;
             size = 0;
             rear = -1;
-            return null;
-        } else if (front == 0 && size == 0) {
             return null;
         }
         T element = queue[front];
@@ -44,9 +44,7 @@ public class QueueCyclic<T> extends Queue<T> {
         if (sizeArray <= size && queue[0] == null) {
             size++;
             rear = 0;
-        } else if (sizeArray < size && queue[rear] == null) {
-            size++;
-        } else if (sizeArray > size && queue[rear] == null) {
+        } else if (sizeArray != size && queue[rear] == null) {
             size++;
         } else {
             rear--;
