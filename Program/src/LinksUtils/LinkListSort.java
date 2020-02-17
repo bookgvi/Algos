@@ -21,12 +21,12 @@ public class LinkListSort extends LinkList {
         while (current != null && val > current.getdData()) {
             previous = current;
             current = current.next;
-            if (previous == null) {
-                this.first = newLink;
-            } else {
-                previous.next = newLink;
-            }
-            newLink.next = current;
         }
+        if (previous == null) {
+            this.first = newLink;
+        } else {
+            previous.next = newLink;
+        }
+        newLink.next = current;
     }
 }
