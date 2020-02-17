@@ -2,6 +2,7 @@ import ArrayUtils.ArrayFindElement;
 import ArrayUtils.ArrayInsert;
 import ArrayUtils.ArrayPrepare;
 import ArrayUtils.ArrayShow;
+import LinksUtils.LinkList;
 import QueueUtils.Queue;
 import QueueUtils.QueueCyclic;
 import Sort.QuickSort;
@@ -111,5 +112,18 @@ public class Program {
         queueCyclic.dequeue();
         queueCyclic.enqueue(FOURTH);
         queueCyclic.dequeue();
+
+        /*
+        * Блок для операций со связанными списками
+        */
+        LinkList linkList = new LinkList();
+        linkList.insertFirst(1, 12.22);
+        linkList.insertFirst(2, 22.22);
+        linkList.insertFirst(3, 32.22);
+        linkList.insertFirst(4, 42.22);
+        linkList.insertFirst(5, 52.22);
+        linkList.displayList();
+        System.out.print("\nSearching... ");
+        linkList.search(1).displayLink();
     }
 }
