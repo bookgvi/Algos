@@ -7,8 +7,14 @@ public class ArrayShow {
      * @param arr - массив
      */
     public static void printArray(int[] arr) {
-        for (int i : arr) {
-            System.out.print(i + " ");
+        String comma = ", ";
+        int i = 0;
+        for (int val : arr) {
+            System.out.print(val + comma);
+            i++;
+            if (i >= arr.length - 1) {
+                comma = "";
+            }
         }
     }
 }
