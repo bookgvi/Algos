@@ -7,5 +7,5 @@ public interface Delete {
      * @param key - ключ элемента, который нужно удалить
      * @return Link - удаленный элемент
      */
-    Link delete(int key);
+    LinkWithKey delete(int key);
 }

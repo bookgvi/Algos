@@ -7,5 +7,5 @@ public interface Search {
      * @param key - ключ для поиска
      * @return Link - ссылка на найденный элемент
      */
-    Link search(int key);
+    LinkWithKey search(int key);
 }
