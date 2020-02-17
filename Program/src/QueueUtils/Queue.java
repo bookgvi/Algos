@@ -1,18 +1,22 @@
 package QueueUtils;
 
 public class Queue<T> implements Top<T>, IsEmpty, Enqueue<T>, Dequeue<T> {
-    private T[] queue;
+    protected T[] queue;
+
     public Queue() {
         queue = (T[]) new Object[0];
     }
 
     @Override
     public T top() {
+        if (this.isEmpty()) {
+            return null;
+        }
         return queue[0];
     }
 
     public boolean isEmpty() {
-        return queue.length < 1;
+        return this.queue.length < 1;
     }
 
     public T dequeue() {
