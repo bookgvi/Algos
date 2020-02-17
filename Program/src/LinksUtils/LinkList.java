@@ -1,6 +1,6 @@
 package LinksUtils;
 
-public class LinkList implements InsertFirst, DeleteFirst, DisplayList, Search {
+public class LinkList implements InsertFirst, DeleteFirst, DisplayList, Search, Delete {
     private Link first;
 
     public LinkList() {
@@ -49,9 +49,31 @@ public class LinkList implements InsertFirst, DeleteFirst, DisplayList, Search {
      */
     public Link search(int key) {
         Link current = first;
-        while (key != current.getiData() && current != null) {
+        while (key != current.getiData()) {
             current = current.next;
+            if (current == null) {
+                return null;
+            }
         }
+        return current;
+    }
+
+    /**
+     * Метод удаления элемента с заданным ключём
+     *
+     * @param key - ключ элемента, который нужно удалить
+     * @return Link - удаленный элемент
+     */
+    public Link delete(int key) {
+        Link prev = first, current = first;
+        while (key != current.getiData()) {
+            prev = current;
+            current = current.next;
+            if (current == null) {
+                return null;
+            }
+        }
+        prev.next = current.next;
         return current;
     }
 }

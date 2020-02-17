@@ -123,7 +123,12 @@ public class Program {
         linkList.insertFirst(4, 42.22);
         linkList.insertFirst(5, 52.22);
         linkList.displayList();
+//        linkList.deleteFirst();
         System.out.print("\nSearching... ");
         linkList.search(1).displayLink();
+        linkList.delete(6);
+        linkList.displayList();
+        linkList.delete(3);
+        linkList.displayList();
     }
 }
