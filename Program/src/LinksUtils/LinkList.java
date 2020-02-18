@@ -35,6 +35,10 @@ public class LinkList implements InsertFirst, DeleteFirst, DisplayList, Search, 
     public void displayList() {
         LinkWithKey current = first;
         System.out.print("\n Display al elements first --> last...");
+        this.iterateList(current);
+    }
+
+    protected void iterateList(LinkWithKey current) {
         while (current != null) {
             current.displayLink();
             current = (LinkWithKey) current.next;

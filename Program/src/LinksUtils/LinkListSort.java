@@ -1,6 +1,6 @@
 package LinksUtils;
 
-public class LinkListSort extends LinkList {
+public class LinkListSort extends LinkList implements Execute {
     LinkWithoutKey first;
 
     public LinkListSort() {
@@ -28,5 +28,21 @@ public class LinkListSort extends LinkList {
             previous.next = newLink;
         }
         newLink.next = current;
+    }
+
+    public void displayList() {
+        LinkWithoutKey current = first;
+        String coma = "";
+        while (current != null) {
+            coma = current.next != null ? ", " : "\n";
+            System.out.print(current.getdData() + coma);
+            current = current.next;
+        }
+    }
+
+    public void exec(int[] arr, LinkListSort linkListSort) {
+        for (int val : arr) {
+            linkListSort.insert(val);
+        }
     }
 }

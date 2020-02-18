@@ -9,14 +9,15 @@ import QueueUtils.Queue;
 import QueueUtils.QueueCyclic;
 import Sort.QuickSort;
 import StackUtils.Stack;
-import Utils.FunctionSpeed;
+//import Utils.FunctionSpeed;
+import LinksUtils.FunctionSpeed;
 
 public class Program {
     public static void main(String[] args) {
         final int EXECUTION_COUNT = 1;
-        ArrayPrepare prepArr = new ArrayPrepare(500000, 20000);
+        ArrayPrepare prepArr = new ArrayPrepare(50000, 20000);
         int[] arr = prepArr.getArray();
-        FunctionSpeed functionSpeed = new FunctionSpeed(new QuickSort(arr));
+//        FunctionSpeed functionSpeed = new FunctionSpeed(new QuickSort(arr));
 //        QuickSort quickSort = new QuickSort(arr);
 
         System.out.printf("\nUnsorted array (Array size = %d)\n", arr.length);
@@ -25,9 +26,9 @@ public class Program {
 //        System.out.printf("\nSorted array (Array size = %d)\n", sortedArray.length);
 //        ArrayShow.printArray(sortedArray);
 
-        int[] sortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
+//        int[] sortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
 
-        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", sortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
+//        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", sortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
 //
         /*
          * Блок проверки ArrayInsert - вставки элемента в массив
@@ -116,27 +117,27 @@ public class Program {
 //        queueCyclic.dequeue();
 //
         /*
-        * Блок для операций со связанными списками
-        */
+         * Блок для операций со связанными списками
+         */
         LinkList linkList = new LinkList();
         linkList.insertFirst(1, 12);
         linkList.insertFirst(2, 22);
         linkList.insertFirst(3, 32);
         linkList.insertFirst(4, 42);
         linkList.insertFirst(5, 52);
-        linkList.displayList();
-//        linkList.deleteFirst();
+        linkList.deleteFirst();
         System.out.print("\nSearching... ");
         linkList.search(1).displayLink();
         linkList.delete(6);
         linkList.delete(3);
         linkList.displayList();
+        System.out.println();
+        // Sorted LinkList
         LinkListSort linkListSort = new LinkListSort();
-        linkListSort.insert(1);
-        linkListSort.insert(12);
-        linkListSort.insert(1);
-        linkListSort.insert(2);
-        linkListSort.insert(6);
-        linkListSort.insert(4);
+
+        FunctionSpeed functionSpeed1 = new FunctionSpeed(linkListSort);
+        functionSpeed1.evaluateSpeed(EXECUTION_COUNT, arr, linkListSort);
+        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", arr.length, functionSpeed1.getTimeOfExecution(EXECUTION_COUNT));
+//        linkListSort.displayList();
     }
 }
