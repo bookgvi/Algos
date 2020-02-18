@@ -22,12 +22,15 @@ public class ExecuteInMainLinks extends ExecuteInMainAbstract {
         linkList.displayList();
         System.out.println();
         // Sorted LinkList
+    }
+
+    public void executeSort() {
         LinkListSort linkListSort = new LinkListSort();
 
         FunctionSpeed functionSpeed1 = new FunctionSpeed(linkListSort);
         int EXECUTION_COUNT = 1;
         functionSpeed1.evaluateSpeed(EXECUTION_COUNT, arr, linkListSort);
-        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", arr.length, functionSpeed1.getTimeOfExecution(EXECUTION_COUNT));
+        System.out.printf("\nInsertion sort via linked list: Array size = %d, ETA = %dms\n", arr.length, functionSpeed1.getTimeOfExecution(EXECUTION_COUNT));
 //        linkListSort.displayList();
     }
 }

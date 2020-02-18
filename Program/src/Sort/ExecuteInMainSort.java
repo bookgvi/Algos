@@ -5,25 +5,26 @@ import Utils.ExecuteInMainAbstract;
 import Utils.FunctionSpeed;
 
 public class ExecuteInMainSort extends ExecuteInMainAbstract {
-    private static final int EXECUTION_COUNT = 1000;
+    private int EXECUTION_COUNT;
     private int[] arr;
 
-    public ExecuteInMainSort(int[] arr) {
+    public ExecuteInMainSort(int[] arr, int EXECUTION_COUNT) {
         this.arr = arr;
+        this.EXECUTION_COUNT = EXECUTION_COUNT;
     }
 
     public void execute() {
-        FunctionSpeed functionSpeed = new FunctionSpeed(new QuickSort(arr));
         QuickSort quickSort = new QuickSort(arr);
+        FunctionSpeed functionSpeed = new FunctionSpeed(quickSort);
 
-        System.out.printf("\nUnsorted array (Array size = %d)\n", arr.length);
+//        System.out.printf("\nUnsorted array (Array size = %d)\n", arr.length);
 //        ArrayShow.printArray(arr);
-        int[] sortedArray = quickSort.exec();
-        System.out.printf("\nSorted array (Array size = %d)\n", sortedArray.length);
+//        int[] sortedArray = quickSort.exec();
+//        System.out.printf("\nSorted array (Array size = %d)\n", sortedArray.length);
 //        ArrayShow.printArray(sortedArray);
 
         int[] QuickSortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
 
-        System.out.printf("\nSorted array: Array size = %d, ETA = %dms\n", QuickSortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
+        System.out.printf("\nQuick Sort: Array size = %d, ETA = %dms\n", QuickSortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
     }
 }

@@ -12,12 +12,17 @@ public class Program {
         ArrayPrepare prepArr = new ArrayPrepare(500000, 3000);
         int[] arr = prepArr.getArray();
         final int POSITION = (int) (Math.random() * arr.length);
+        final int EXECUTION_COUNT = 100;
+
+        // для работы со связанными списками
+        ExecuteInMainLinks linkList = new ExecuteInMainLinks();
 
         /**
          * Sorting
          */
-        ExecuteInMainSort quickSort = new ExecuteInMainSort(arr);
+        ExecuteInMainSort quickSort = new ExecuteInMainSort(arr, EXECUTION_COUNT);
         quickSort.execute();
+        linkList.executeSort();
 
         /**
          * Блок проверки ArrayInsert - вставки элемента в массив
@@ -52,7 +57,6 @@ public class Program {
         /**
          * Блок для операций со связанными списками
          */
-        ExecuteInMainLinks linkList = new ExecuteInMainLinks();
         linkList.execute();
     }
 }
