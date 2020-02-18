@@ -1,6 +1,3 @@
 # Default ignored files
 /.idea/workspace.xml
 out/
-.idea/
-Program/src/META-INF/
-*.iml

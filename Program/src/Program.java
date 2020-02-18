@@ -3,6 +3,8 @@ import ArrayUtils.ArrayInsert;
 import ArrayUtils.ArrayPrepare;
 import ArrayUtils.ArrayShow;
 import LinksUtils.LinkList;
+import LinksUtils.LinkListSort;
+import LinksUtils.LinkWithoutKey;
 import QueueUtils.Queue;
 import QueueUtils.QueueCyclic;
 import Sort.QuickSort;
@@ -127,8 +129,14 @@ public class Program {
         System.out.print("\nSearching... ");
         linkList.search(1).displayLink();
         linkList.delete(6);
-        linkList.displayList();
         linkList.delete(3);
         linkList.displayList();
+        LinkListSort linkListSort = new LinkListSort();
+        linkListSort.insert(1);
+        linkListSort.insert(12);
+        linkListSort.insert(1);
+        linkListSort.insert(2);
+        linkListSort.insert(6);
+        linkListSort.insert(4);
     }
 }
