@@ -1,13 +1,7 @@
-import ArrayUtils.ArrayPrepare;
-import ArrayUtils.ExecuteInMainFind;
-import ArrayUtils.ExecuteInMainInsert;
-import LinksUtils.ExecuteInMainLinks;
-import QueueUtils.ExecuteInMainQueue;
 import Recursion.Execute.ExecuteInMainRecursion;
 import Recursion.TriangleQuant.TriangleCount;
-import Sort.ExecuteInMainSort;
-import StackUtils.ExecuteInMainStack;
-import Utils.GetInput;
+import Utils.GetInputNumber;
+import Utils.GetInputString;
 
 import java.io.IOException;
 
@@ -15,7 +9,7 @@ import java.io.IOException;
 public class Program {
     public static void main(String[] args) throws IOException {
         ExecuteInMainRecursion triangleQuant = new ExecuteInMainRecursion(new TriangleCount());
-        int count = GetInput.getInt();
+        int count = GetInputNumber.getInt();
         int result = (Integer) triangleQuant.run(count);
         System.out.print(result);
         System.out.println();
