@@ -11,7 +11,7 @@ public class Program {
         int count = GetInputNumber.getInt();
         ExecuteInMainRecursion<Integer> triangleQuant = new ExecuteInMainRecursion<>(new TriangleCount(count));
         int result = triangleQuant.run(count);
-        System.out.println();
+        System.out.println("\n" + result);
 
 //        ArrayPrepare prepArr = new ArrayPrepare(500000, 3000);
 //        int[] arr = prepArr.getArray();
