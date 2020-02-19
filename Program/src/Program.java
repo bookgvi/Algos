@@ -8,10 +8,9 @@ import java.io.IOException;
 
 public class Program {
     public static void main(String[] args) throws IOException {
-        ExecuteInMainRecursion triangleQuant = new ExecuteInMainRecursion(new TriangleCount());
         int count = GetInputNumber.getInt();
-        int result = (Integer) triangleQuant.run(count);
-        System.out.print(result);
+        ExecuteInMainRecursion<Integer> triangleQuant = new ExecuteInMainRecursion<>(new TriangleCount(count));
+        int result = triangleQuant.run(count);
         System.out.println();
 
 //        ArrayPrepare prepArr = new ArrayPrepare(500000, 3000);
