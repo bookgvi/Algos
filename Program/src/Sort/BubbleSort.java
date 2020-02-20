@@ -7,7 +7,7 @@ public class BubbleSort implements Execute {
         this.arr = arr;
     }
 
-    public int[] makeSort(int[] arr) {
+    private int[] makeSort(int[] arr) {
         final int arrLength = arr.length;
         for(int k = arrLength - 1; k > 1; k--) {
             for (int i = 0; i < k; i++) {

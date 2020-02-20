@@ -6,10 +6,8 @@ import Utils.FunctionSpeed;
 
 public class ExecuteInMainSort extends ExecuteInMainAbstract {
     private int EXECUTION_COUNT;
-    private int[] arr;
 
-    public ExecuteInMainSort(int[] arr, int EXECUTION_COUNT) {
-        this.arr = arr;
+    public ExecuteInMainSort(int EXECUTION_COUNT) {
         this.EXECUTION_COUNT = EXECUTION_COUNT;
     }
 
