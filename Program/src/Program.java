@@ -3,25 +3,34 @@ import ArrayUtils.ExecuteInMainFind;
 import ArrayUtils.ExecuteInMainInsert;
 import LinksUtils.ExecuteInMainLinks;
 import QueueUtils.ExecuteInMainQueue;
+import Sort.BubbleSort;
 import Sort.ExecuteInMainSort;
+import Sort.QuickSort;
 import StackUtils.ExecuteInMainStack;
 
 
 public class Program {
     public static void main(String[] args) {
-        ArrayPrepare prepArr = new ArrayPrepare(500000, 3000);
+        final int ARRAY_SIZE = 100000;
+        final int EXECUTION_COUNT = 10000;
+        final int MAX_NUMBER = ARRAY_SIZE + 1;
+        ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
         int[] arr = prepArr.getArray();
         final int POSITION = (int) (Math.random() * arr.length);
-        final int EXECUTION_COUNT = 100;
 
         // для работы со связанными списками
-        ExecuteInMainLinks linkList = new ExecuteInMainLinks();
+        ExecuteInMainLinks linkList = new ExecuteInMainLinks(ARRAY_SIZE, EXECUTION_COUNT, MAX_NUMBER);
 
         /**
          * Sorting
          */
-        ExecuteInMainSort quickSort = new ExecuteInMainSort(arr, EXECUTION_COUNT);
-        quickSort.execute();
+        ExecuteInMainSort sortMain = new ExecuteInMainSort(arr, EXECUTION_COUNT);
+        QuickSort quickSort = new QuickSort(arr);
+        System.out.print(quickSort);
+        BubbleSort bubbleSort = new BubbleSort(arr);
+
+        sortMain.execute(quickSort, "QuickSort");
+        sortMain.execute(bubbleSort, "Bubble sort");
         linkList.executeSort();
 
         /**

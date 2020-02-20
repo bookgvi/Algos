@@ -4,8 +4,15 @@ import ArrayUtils.ArrayPrepare;
 import Utils.ExecuteInMainAbstract;
 
 public class ExecuteInMainLinks extends ExecuteInMainAbstract {
-    ArrayPrepare prepArr = new ArrayPrepare(5000, 20000);
-    private int[] arr = prepArr.getArray();
+    private ArrayPrepare prepArr;
+    private int[] arr;
+    private int EXECUTION_COUNT;
+
+    public ExecuteInMainLinks(int ARRAY_SIZE, int EXECUTION_COUNT, int MAX_NUMBER) {
+        this.prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
+        this.arr = prepArr.getArray();
+        this.EXECUTION_COUNT = EXECUTION_COUNT;
+    }
 
     public void execute() {
         LinkList linkList = new LinkList();
@@ -28,7 +35,6 @@ public class ExecuteInMainLinks extends ExecuteInMainAbstract {
         LinkListSort linkListSort = new LinkListSort();
 
         FunctionSpeed functionSpeed1 = new FunctionSpeed(linkListSort);
-        int EXECUTION_COUNT = 1;
         functionSpeed1.evaluateSpeed(EXECUTION_COUNT, arr, linkListSort);
         System.out.printf("\nInsertion sort via linked list: Array size = %d, ETA = %dms\n", arr.length, functionSpeed1.getTimeOfExecution(EXECUTION_COUNT));
 //        linkListSort.displayList();

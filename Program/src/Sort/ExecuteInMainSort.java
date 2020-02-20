@@ -13,9 +13,8 @@ public class ExecuteInMainSort extends ExecuteInMainAbstract {
         this.EXECUTION_COUNT = EXECUTION_COUNT;
     }
 
-    public void execute() {
-        QuickSort quickSort = new QuickSort(arr);
-        FunctionSpeed functionSpeed = new FunctionSpeed(quickSort);
+    public void execute(Execute sortMethod, String name) {
+        FunctionSpeed functionSpeed = new FunctionSpeed(sortMethod);
 
 //        System.out.printf("\nUnsorted array (Array size = %d)\n", arr.length);
 //        ArrayShow.printArray(arr);
@@ -25,6 +24,6 @@ public class ExecuteInMainSort extends ExecuteInMainAbstract {
 
         int[] QuickSortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
 
-        System.out.printf("\nQuick Sort: Array size = %d, ETA = %dms\n", QuickSortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
+        System.out.printf("\n%s: Array size = %d, ETA = %dms", name, QuickSortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
     }
 }
