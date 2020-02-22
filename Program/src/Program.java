@@ -2,10 +2,7 @@ import ArrayUtils.ArrayPrepare;
 import LinksUtils.ExecuteInMainLinks;
 import Recursion.Execute.ExecuteInMainRecursion;
 import Recursion.TriangleQuant.TriangleCount;
-import Sort.BubbleSort;
-import Sort.Execute;
-import Sort.ExecuteInMainSort;
-import Sort.QuickSort;
+import Sort.*;
 import Utils.GetInputNumber;
 import Utils.GetInputString;
 
@@ -19,7 +16,7 @@ public class Program {
 //        int result = triangleQuant.run(count);
 //        System.out.println("\n" + result);
 
-        final int ARRAY_SIZE = 10000;
+        final int ARRAY_SIZE = 100000;
         final int EXECUTION_COUNT = 1;
         int MAX_NUMBER = ARRAY_SIZE + 1;
         ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
@@ -31,10 +28,15 @@ public class Program {
         /**
          * Sorting
          */
+        MergeSort ms = new MergeSort(arr);
+        QuickSort qs = new QuickSort(arr);
         ExecuteInMainSort sortMethod = new ExecuteInMainSort(EXECUTION_COUNT);
-        sortMethod.execute(new QuickSort(arr), "Quick Sort");
-        sortMethod.execute(new BubbleSort(arr), "Bubble Sort");
-        linkList.executeSort();
+        sortMethod.execute(ms, "Merge Sort");
+        System.out.print(", Iterator = " + ms.iterator);
+        sortMethod.execute(qs, "Quick Sort");
+        System.out.print(", Iterator = " + qs.iterator);
+//        sortMethod.execute(new BubbleSort(arr), "Bubble Sort");
+//        linkList.executeSort();
 //
 //        /**
 //         * Блок проверки ArrayInsert - вставки элемента в массив

@@ -20,8 +20,8 @@ public class ExecuteInMainSort extends ExecuteInMainAbstract {
 //        System.out.printf("\nSorted array (Array size = %d)\n", sortedArray.length);
 //        ArrayShow.printArray(sortedArray);
 
-        int[] QuickSortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
+        int[] SortedArray = functionSpeed.evaluateSpeed(EXECUTION_COUNT);
 
-        System.out.printf("\n%s: Array size = %d, ETA = %dms", name, QuickSortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
+        System.out.printf("\n%s: Array size = %d, ETA = %dms", name, SortedArray.length, functionSpeed.getTimeOfExecution(EXECUTION_COUNT));
     }
 }

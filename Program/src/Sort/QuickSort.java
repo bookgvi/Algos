@@ -5,12 +5,14 @@ import ArrayUtils.ArrayCompareElements;
 
 public class QuickSort implements Execute {
     private int[] arr;
+    public long iterator;
 
     public QuickSort(int[] arr) {
         this.arr = arr;
     }
 
     private int[] makeSort(int[] arr) {
+        this.iterator++;
         if (arr.length < 2 || ArrayCompareElements.isEqual(arr)) {
             return arr;
         }
