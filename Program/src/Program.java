@@ -30,11 +30,14 @@ public class Program {
          */
         MergeSort ms = new MergeSort(arr);
         QuickSort qs = new QuickSort(arr);
+        InsertionSort is = new InsertionSort(arr);
         ExecuteInMainSort sortMethod = new ExecuteInMainSort(EXECUTION_COUNT);
         sortMethod.execute(ms, "Merge Sort");
         System.out.print(", Iterator = " + ms.iterator);
         sortMethod.execute(qs, "Quick Sort");
         System.out.print(", Iterator = " + qs.iterator);
+        sortMethod.execute(is, "Insertion Sort");
+        System.out.println();
 //        sortMethod.execute(new BubbleSort(arr), "Bubble Sort");
 //        linkList.executeSort();
 //
