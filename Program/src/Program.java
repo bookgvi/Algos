@@ -1,4 +1,5 @@
 import ArrayUtils.ArrayPrepare;
+import ArrayUtils.ArrayShow;
 import LinksUtils.ExecuteInMainLinks;
 import Recursion.Execute.ExecuteInMainRecursion;
 import Recursion.TriangleQuant.TriangleCount;
@@ -17,18 +18,24 @@ public class Program {
 //        int result = triangleQuant.run(count);
 //        System.out.println("\n" + result);
 
-        final int ARRAY_SIZE = 1000;
+        final int ARRAY_SIZE = 50;
         final int EXECUTION_COUNT = 1;
         int MAX_NUMBER = ARRAY_SIZE + 1;
-        final int SEARCH_NUMBER = 333335;
+        final int SEARCH_NUMBER = 20;
         ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
         int[] arr = prepArr.getArray();
 
         // Binary search
         BinarySearch binarySearch = new BinarySearch(arr, SEARCH_NUMBER);
         binarySearch.makeSearch(0, arr.length - 1);
-        int searchResult = binarySearch.getSearchResult();
-        System.out.printf("Element %d, расположен по индексу %d", SEARCH_NUMBER, searchResult);
+        Number searchResult = binarySearch.getSearchResult();
+        if (searchResult != null) {
+            System.out.printf("Element %d, расположен по индексу %d", SEARCH_NUMBER, (int) searchResult);
+        } else {
+            System.out.printf("Element %d, в массиве не найден", SEARCH_NUMBER);
+        }
+
+
         // для работы со связанными списками
         ExecuteInMainLinks linkList = new ExecuteInMainLinks(ARRAY_SIZE, EXECUTION_COUNT, MAX_NUMBER);
 

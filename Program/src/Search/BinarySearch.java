@@ -1,5 +1,6 @@
 package Search;
 
+import ArrayUtils.ArrayShow;
 import Search.Interfaces.GetResult;
 import Search.Interfaces.Search;
 import Sort.MergeSort;
@@ -7,7 +8,7 @@ import Sort.MergeSort;
 public class BinarySearch implements Search, GetResult {
     private int[] arr;
     private int searchElem;
-    private int indexOfFindingElement;
+    private Number indexOfFindingElement = null;
     private int iterator = 0;
 
     public BinarySearch(int[] arr, int searchElem) {
@@ -35,7 +36,11 @@ public class BinarySearch implements Search, GetResult {
         }
     }
 
-    public int getSearchResult() {
+    public Number getSearchResult() {
+        if (this.arr.length <= 50) {
+            ArrayShow.printArray(this.arr);
+            System.out.println();
+        }
         return indexOfFindingElement;
     }
 }
