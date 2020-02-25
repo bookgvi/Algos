@@ -1,3 +1,4 @@
+import BinaryTree.INode;
 import BinaryTree.Tree;
 
 import java.io.IOException;
@@ -15,6 +16,14 @@ public class Program {
         tree.insert(20, 200);
         tree.insert(3, 300);
         tree.insert(24, 400);
+        tree.insert(124, 410);
+        tree.insert(5, 413);
+        tree.insert(2, 430);
+
+        INode res = tree.find(3);
+        res = tree.find(1);
+        tree.delete(0);
+        tree.delete(20);
 
 //        final int ARRAY_SIZE = 50;
 //        final int EXECUTION_COUNT = 1;
