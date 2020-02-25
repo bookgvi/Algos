@@ -1,4 +1,4 @@
-package Temp.Tree;
+package BinaryTree;
 
 public interface Find {
     INode find(int key);

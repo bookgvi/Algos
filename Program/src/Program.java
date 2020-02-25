@@ -1,5 +1,4 @@
-import Temp.LinkList.LinkList;
-import Temp.Tree.Tree;
+import BinaryTree.Tree;
 
 import java.io.IOException;
 
