@@ -88,7 +88,8 @@ public class Tree implements Find, Insert, Delete {
                 parent.setRight(current.getRight());
             }
         } else {
-            INode successor = findSuccessor();
+//            TODO
+//            INode successor = findSuccessor();
         }
     }
 }

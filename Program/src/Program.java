@@ -1,5 +1,7 @@
+import ArrayUtils.ArrayPrepare;
 import BinaryTree.INode;
 import BinaryTree.Tree;
+import Sort.*;
 
 import java.io.IOException;
 
@@ -24,13 +26,14 @@ public class Program {
         res = tree.find(1);
         tree.delete(0);
         tree.delete(20);
+        System.gc();
 
-//        final int ARRAY_SIZE = 50;
-//        final int EXECUTION_COUNT = 1;
-//        int MAX_NUMBER = ARRAY_SIZE + 1;
-//        final int SEARCH_NUMBER = 20;
-//        ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
-//        int[] arr = prepArr.getArray();
+        final int ARRAY_SIZE = 400_000_000;
+        final int EXECUTION_COUNT = 1;
+        int MAX_NUMBER = ARRAY_SIZE + 1;
+        final int SEARCH_NUMBER = 20;
+        ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
+        int[] arr = prepArr.getArray();
 //
 //        // Binary search
 //        BinarySearch binarySearch = new BinarySearch(arr, SEARCH_NUMBER);
@@ -49,16 +52,16 @@ public class Program {
 //        /**
 //         * Sorting
 //         */
-//        MergeSort ms = new MergeSort(arr);
-//        QuickSort qs = new QuickSort(arr);
-//        InsertionSort is = new InsertionSort(arr);
-//        ExecuteInMainSort sortMethod = new ExecuteInMainSort(EXECUTION_COUNT);
-//        sortMethod.execute(ms, "Merge Sort");
-//        System.out.print(", Iterator = " + ms.iterator);
-//        sortMethod.execute(qs, "Quick Sort");
-//        System.out.print(", Iterator = " + qs.iterator);
-//        sortMethod.execute(is, "Insertion Sort");
-//        System.out.println();
+        MergeSort ms = new MergeSort(arr);
+        QuickSort qs = new QuickSort(arr);
+        InsertionSort is = new InsertionSort(arr);
+        ExecuteInMainSort sortMethod = new ExecuteInMainSort(EXECUTION_COUNT);
+        sortMethod.execute(ms, "Merge Sort");
+        System.out.print(", Iterator = " + ms.iterator);
+        sortMethod.execute(qs, "Quick Sort");
+        System.out.print(", Iterator = " + qs.iterator);
+        sortMethod.execute(is, "Insertion Sort");
+        System.out.println();
 //        sortMethod.execute(new BubbleSort(arr), "Bubble Sort");
 //        linkList.executeSort();
 //
