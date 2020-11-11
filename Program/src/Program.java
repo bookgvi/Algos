@@ -1,104 +1,18 @@
-import ArrayUtils.ArrayPrepare;
-import BinaryTree.INode;
-import BinaryTree.Tree;
-import Sort.*;
+
+import Trees.BinaryTree.Node;
+import Trees.BinaryTree.Tree;
 
 import java.io.IOException;
+import java.util.Random;
 
 
 public class Program {
     public static void main(String[] args) throws IOException {
-//        int count = GetInputNumber.getInt();
-//        ExecuteInMainRecursion<Integer> triangleQuant = new ExecuteInMainRecursion<>(new TriangleCount(count));
-//        int result = triangleQuant.run(count);
-//        System.out.println("\n" + result);
-
+        Random rnd = new Random();
         Tree tree = new Tree();
-        tree.insert(15, 100);
-        tree.insert(20, 200);
-        tree.insert(3, 300);
-        tree.insert(24, 400);
-        tree.insert(124, 410);
-        tree.insert(5, 413);
-        tree.insert(2, 430);
-
-        INode res = tree.find(3);
-        res = tree.find(1);
-        tree.delete(0);
-        tree.delete(20);
-        System.gc();
-
-        final int ARRAY_SIZE = 400_000_000;
-        final int EXECUTION_COUNT = 1;
-        int MAX_NUMBER = ARRAY_SIZE + 1;
-        final int SEARCH_NUMBER = 20;
-        ArrayPrepare prepArr = new ArrayPrepare(ARRAY_SIZE, MAX_NUMBER);
-        int[] arr = prepArr.getArray();
-//
-//        // Binary search
-//        BinarySearch binarySearch = new BinarySearch(arr, SEARCH_NUMBER);
-//        binarySearch.makeSearch(0, arr.length - 1);
-//        Number searchResult = binarySearch.getSearchResult();
-//        if (searchResult != null) {
-//            System.out.printf("Element %d, расположен по индексу %d", SEARCH_NUMBER, (int) searchResult);
-//        } else {
-//            System.out.printf("Element %d, в массиве не найден", SEARCH_NUMBER);
-//        }
-//
-
-        // для работы со связанными списками
-//        ExecuteInMainLinks linkList = new ExecuteInMainLinks(ARRAY_SIZE, EXECUTION_COUNT, MAX_NUMBER);
-//
-//        /**
-//         * Sorting
-//         */
-        MergeSort ms = new MergeSort(arr);
-        QuickSort qs = new QuickSort(arr);
-        InsertionSort is = new InsertionSort(arr);
-        ExecuteInMainSort sortMethod = new ExecuteInMainSort(EXECUTION_COUNT);
-        sortMethod.execute(ms, "Merge Sort");
-        System.out.print(", Iterator = " + ms.iterator);
-        sortMethod.execute(qs, "Quick Sort");
-        System.out.print(", Iterator = " + qs.iterator);
-        sortMethod.execute(is, "Insertion Sort");
-        System.out.println();
-//        sortMethod.execute(new BubbleSort(arr), "Bubble Sort");
-//        linkList.executeSort();
-//
-//        /**
-//         * Блок проверки ArrayInsert - вставки элемента в массив
-//         */
-//        final int POSITION = (int) (Math.random() * arr.length);
-//        int[] arr1 = { 1, 2, 3, 4, 5, 6 };
-//        ExecuteInMainInsert insert = new ExecuteInMainInsert(arr1, POSITION);
-//        insert.execute();
-//
-//        /**
-//         * Блок бинарного поиска
-//         */
-//        ExecuteInMainFind binaryFind = new ExecuteInMainFind();
-//        binaryFind.execute();
-//
-//        /**
-//         * Блок для операций со стэком
-//         */
-//        ExecuteInMainStack stack = new ExecuteInMainStack();
-//        // Стэк чисел
-//        stack.executeNumber();
-//        // Стэк строк (пустой)
-//        stack.executeString();
-//
-//        /**
-//         * Блок для операций с очередью
-//         */
-//        ExecuteInMainQueue queue = new ExecuteInMainQueue();
-//        queue.executeSimple();
-//        // Cyclic queue (Смотреть в дебаггере)
-//        queue.executeCyclic();
-//
-//        /**
-//         * Блок для операций со связанными списками
-//         */
-//        linkList.execute();
+        for (int i = 1; i <= 10; i++) {
+            Node node = new Node(rnd.nextInt(100), rnd.nextFloat());
+            tree.insert(node);
+        }
     }
 }

@@ -42,13 +42,15 @@ public class Tree {
     while (true) {
       Node parent = currentNode;
       node.setParentNode(parent);
-      if (currentNode.getId() < node.getId()) {
+      if (currentNode.getId() > node.getId()) {
         currentNode = currentNode.getLeftChild();
         if (currentNode == null) {
           // Вставить новый левый лист
           parent.setLeftChild(node);
           return;
         }
+      } else if (currentNode.getId() == node.getId()) {
+        return;
       } else {
         currentNode = currentNode.getRightChild();
         if (currentNode == null) {
