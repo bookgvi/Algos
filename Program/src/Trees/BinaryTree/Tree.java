@@ -41,6 +41,7 @@ public class Tree {
     Node currentNode = root;
     while (true) {
       Node parent = currentNode;
+      node.setParentNode(parent);
       if (currentNode.getId() < node.getId()) {
         currentNode = currentNode.getLeftChild();
         if (currentNode == null) {
@@ -58,4 +59,5 @@ public class Tree {
       }
     }
   }
+
 }

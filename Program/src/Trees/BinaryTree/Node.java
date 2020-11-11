@@ -3,6 +3,7 @@ package Trees.BinaryTree;
 public class Node {
   private int id;
   private float data;
+  private Node parentNode;
   private Node leftChild;
   private Node rightChild;
 
@@ -41,6 +42,14 @@ public class Node {
 
   public void setRightChild(Node rightChild) {
     this.rightChild = rightChild;
+  }
+
+  public Node getParentNode() {
+    return this.parentNode;
+  }
+
+  public void setParentNode(Node parentNode) {
+    this.parentNode = parentNode;
   }
 
   @Override
