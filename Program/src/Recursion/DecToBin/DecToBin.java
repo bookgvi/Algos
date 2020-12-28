@@ -1,5 +1,6 @@
 package Recursion.DecToBin;
 
+import java.util.BitSet;
 import java.util.Stack;
 
 public class DecToBin {
@@ -18,5 +19,11 @@ public class DecToBin {
     int SHIFT_COUNT = 32;
     if (result.size() < SHIFT_COUNT) shift(decimal >> 1, result);
     return result;
+  }
+
+  public BitSet bitSet(int decimal, BitSet result, int i) {
+    if (i == result.size()) return result;
+    if ((decimal & 1) == 1) result.set(i);
+    return bitSet(decimal >> 1, result, ++i);
   }
 }
