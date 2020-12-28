@@ -12,4 +12,11 @@ public class DecToBin {
     }
     return convert(decimal / 2, result);
   }
+
+  public Stack<Integer> shift(int decimal, Stack<Integer> result) {
+    result.push(decimal & 1);
+    int SHIFT_COUNT = 32;
+    if (result.size() < SHIFT_COUNT) shift(decimal >> 1, result);
+    return result;
+  }
 }
