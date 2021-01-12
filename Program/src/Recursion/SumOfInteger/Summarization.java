@@ -1,6 +1,7 @@
 package Recursion.SumOfInteger;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 class Summarization {
@@ -17,11 +18,25 @@ class Summarization {
   }
 
   void sum() {
-//    int[] result = proceed(array, arraySize);
-//    System.out.printf("Sum of %s integers = %s%n", arraySize, Arrays.toString(result));
-    int result2 = proceed1(arraySize);
-//    System.out.printf("%s%n", Arrays.toString(array));
-    System.out.printf("Sum of %s integers = %s%n", arraySize, result2);
+    long then = System.nanoTime();
+    proceed1(arraySize);
+    long millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
+    System.out.println("Proceed with decomposition for (ns): " + millis);
+
+    then = System.nanoTime();
+    proceed2(arraySize);
+    millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
+    System.out.println("Proceed without decomposition for (ns): " + millis);
+
+    then = System.nanoTime();
+    int res = (arraySize + 1) * arraySize / 2;
+    millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
+    System.out.println("Формула - (n + 1) * n / 2 - for (ns): " + millis);
+
+    then = System.nanoTime();
+    proceed(array, arraySize);
+    millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
+    System.out.println("Proceed with array for (ns): " + millis);
   }
 
   int proceed2(int count) {
@@ -60,7 +75,6 @@ class Summarization {
   }
 
   int proceed(int[] array, int arraySize) {
-    System.out.printf("Array: %s%n", Arrays.toString(array));
     if (arraySize == 1) return array[0];
     if ((arraySize & -arraySize) == arraySize) {
       array = Arrays.copyOfRange(array, 0, array.length / 2);
