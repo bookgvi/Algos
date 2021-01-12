@@ -24,6 +24,11 @@ class Summarization {
     System.out.printf("Sum of %s integers = %s%n", arraySize, result2);
   }
 
+  int proceed2(int count) {
+    if (count == 1) return count;
+    return proceed2(count - 1) + count;
+  }
+
   int proceed1(int count) {
     int result = 1;
     if (count == 1) return result;

@@ -39,4 +39,14 @@ public class SummarizationTest {
       assertEquals("i = " + i, control, resultViaArray);
     });
   }
+
+  @org.junit.Test
+  public void sum_of_integers_without_decompositions() {
+    Summarization summarization = new Summarization(10);
+    IntStream.rangeClosed(1, 30).forEach((i) -> {
+      int resultViaArray = summarization.proceed2(i);
+      int control = (1 + i) * i / 2;
+      assertEquals("i = " + i, control, resultViaArray);
+    });
+  }
 }
