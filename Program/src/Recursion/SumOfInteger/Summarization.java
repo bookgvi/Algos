@@ -30,21 +30,29 @@ class Summarization {
   }
 
   int proceed1(int count) {
-    int result = 1;
-    if (count == 1) return result;
-    else if ((count & -count) != count) {
-      result = 2 * proceed1(count / 2) + ((count / 2) * (count / 2)) + count;
-    } else {
-      result = 2 * proceed1(count / 2) + ((count / 2) * (count / 2));
+    if (count == 1) return 1;
+    else {
+      if ((count & -count) != count) {
+        int evenCount = count - 1;
+        return 2 * proceed1((int) evenCount / 2) + (int) Math.pow((int) (count / 2), 2.0) + count;
+      } else {
+        return 2 * proceed1((int) count / 2) + (int) Math.pow((int) (count / 2), 2.0);
+      }
     }
-    return result;
   }
 
   int proceed(int[] array, int arraySize) {
     System.out.printf("Array: %s%n", Arrays.toString(array));
     if (arraySize == 1) return array[0];
-    array = Arrays.copyOfRange(array, 0, array.length / 2);
-    arraySize = array.length;
-    return 2 * proceed(array, arraySize) + ((arraySize / 2) * (arraySize / 2));
+    if ((arraySize & -arraySize) == arraySize) {
+      array = Arrays.copyOfRange(array, 0, array.length / 2);
+      arraySize = array.length;
+      return 2 * proceed(array, arraySize) + (int) Math.pow(arraySize, 2);
+    } else {
+      int correction = array.length;
+      array = Arrays.copyOfRange(array, 0, (array.length - 1)/ 2);
+      arraySize = array.length;
+      return 2 * proceed(array, arraySize) + (int) Math.pow((int) (correction / 2), 2) + correction;
+    }
   }
 }
