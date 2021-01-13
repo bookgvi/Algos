@@ -29,6 +29,11 @@ class Summarization {
     System.out.println("Proceed without decomposition for (ns): " + millis);
 
     then = System.nanoTime();
+    proceed3(arraySize);
+    millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
+    System.out.println("Proceed with for loop - for (ns): " + millis);
+
+    then = System.nanoTime();
     int res = (arraySize + 1) * arraySize / 2;
     millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
     System.out.println("Формула - (n + 1) * n / 2 - for (ns): " + millis);
@@ -37,6 +42,13 @@ class Summarization {
     proceed(array, arraySize);
     millis = TimeUnit.NANOSECONDS.toNanos(System.nanoTime() - then);
     System.out.println("Proceed with array for (ns): " + millis);
+  }
+
+  int proceed3(int count) {
+    int result = 0;
+    for (int i = 1; i <= count; i++)
+      result += i;
+    return result;
   }
 
   int proceed2(int count) {
